@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+
 import os
 def open_picture(img,i):
     # img = cv2.imread(img)
@@ -73,6 +74,7 @@ if __name__ == '__main__':
                 plt.title(titles[i])
                 plt.xticks([]),plt.yticks([])
             plt.show()
+            plt.imsave
             print(thresh,fn_min)
             # open_picture(otsu ,j)
 

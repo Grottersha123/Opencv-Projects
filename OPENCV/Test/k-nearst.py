@@ -45,11 +45,11 @@ def clean_image(img):
     # reduced = cv2.cvtColor(reduce_colors(cv2.cvtColor(equalized_img, cv2.COLOR_GRAY2BGR), 8), cv2.COLOR_BGR2GRAY)
     # cv2.imwrite('licence_plate_red.png', reduced)
 
-    ret, mask = cv2.threshold(gray_img, 127, 255, 0)
-    cv2.imwrite('licence_plate_mask.png', mask)
+    # ret, mask = cv2.threshold(gray_img, 127, 255, 0)
+    # cv2.imwrite('licence_plate_mask.png', mask)
 
-    # kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-    # mask = cv2.erode(mask, kernel, iterations=1)
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+    mask = cv2.erode(gray_img, kernel, iterations=1)
     cv2.imwrite('licence_plate_mask2.png', mask)
 
     return mask
@@ -123,8 +123,8 @@ def model_knn(samples,responses):
     return model
 # ============================================================================os.listdir(r'D:\Github_project\VKR\ROI_PICTURE') ['106.png']
 dir = ['353.png']
-charss = model_knn(r'D:\Github_project\OPENCV\Test\chars_samples.data',r'D:\Github_project\OPENCV\Test\chars_responses.data')
-digits = model_knn(r'D:\Github_project\OPENCV\Test\digits_samples.data',r'D:\Github_project\OPENCV\Test\digits_responses.data')
+charss = model_knn(r'D:\Github_project\OPENCV_Examples\OPENCV\Test\chars_samples.data',r'D:\Github_project\OPENCV_Examples\OPENCV\Test\chars_responses.data')
+digits = model_knn(r'D:\Github_project\OPENCV_Examples\OPENCV\Test\digits_samples.data',r'D:\Github_project\OPENCV_Examples\OPENCV\Test\digits_responses.data')
 for j in dir:
     img = cv2.imread(r'D:\Github_project\VKR\ROI_PICTURE\{0}'.format(j))
 
