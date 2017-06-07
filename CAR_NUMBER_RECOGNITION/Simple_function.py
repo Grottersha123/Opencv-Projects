@@ -48,10 +48,10 @@ class Detection(Operation):
         self.loc = None
         self.img_name = name
         self.roi_segment = []
-        if  os.path.exists(self.path_tresh) == False or os.path.exists(self.path_tresh_otsu) == False:
-            os.mkdir(self.path_tresh)
-            os.mkdir(self.path_native)
-            os.mkdir(self.path_tresh_otsu)
+        # if  os.path.exists(self.path_tresh) == False or os.path.exists(self.path_tresh_otsu) == False:
+        #     os.mkdir(self.path_tresh)
+        #     os.mkdir(self.path_native)
+        #     os.mkdir(self.path_tresh_otsu)
             # os.mkdir(self.path_tresh_tr)
             # os.mkdir(self.path_loc)
     # Скачивание файла каскада хаара
@@ -62,7 +62,7 @@ class Detection(Operation):
         f.close()
 
     def thretholding(self,flag=False):
-        if self.native == None:
+        if self.native is  None:
             print("You didnt create cascade image!")
         else:
             #img = cv2.GaussianBlur(img, (5, 5), 0)
@@ -151,13 +151,13 @@ class Detection(Operation):
             b = Operation(self.tresh,self.img_name)
             if flag:
                 b.save_picture(self.path_tresh)
-    def Creates_pictures(self):
-            self.Cascade()
-            a = Operation(self.native,self.img_name)
-            a.save_picture(self.path_native)
-            self.thretholding()
-            b = Operation(self.tresh,self.img_name)
-            b.save_picture(self.path_tresh)
+    # def Creates_pictures(self):
+    #         self.Cascade()
+    #         a = Operation(self.native,self.img_name)
+    #         a.save_picture(self.path_native)
+    #         self.thretholding()
+    #         b = Operation(self.tresh,self.img_name)
+    #         b.save_picture(self.path_tresh)
 
 class Localisation(Detection):
     current_path = os.getcwd()
@@ -177,7 +177,7 @@ class Localisation(Detection):
         edges = cv2.Canny(self.tr_img, 50, 100, apertureSize=3)
         lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 90, minLineLength=20, maxLineGap=100)
         angles = []
-        if lines == None:
+        if lines is None:
             print('miss '+self.img_name)
             self.ang  = 0.0
         else:
@@ -194,25 +194,27 @@ class Localisation(Detection):
                 # return (av, img)
             except:
                 self.ang  = 0.0
-                return (0,img)
+                # return (0,img)
     def rotate(self,flag = False):
         self.detect_lines()
-        rows, cols, ch = img.shape
+        rows, cols= self.tr_img.shape
 
         print(self.ang)
         M = cv2.getRotationMatrix2D((cols / 2, rows / 2), self.ang, 1)
         self.rorate = cv2.warpAffine(self.tr_img, M, (cols, rows))
+        print('Picture rorated')
         if flag:
             Operation.open_picture(self,self.rorate,'lol')
     def roi_area(self,p1,p2,img = None):
     #roi_color = img[y:y + h, x:x + w]
-        if img == None:
+        if img is None:
             self.local = self.rorate[p2[1]:p1[1], p1[0]:p2[0]]
         else:
             img = img[p2[1]:p1[1], p1[0]:p2[0]]
+
             return img
     def max_min(self,points = None):
-        if points != None:
+        if points is not None:
             a = np.array(points)
         else:
             a = np.array(self.points)
@@ -224,8 +226,8 @@ class Localisation(Detection):
         max_y = max(y)
         return (min_x, max_y), (max_x, min_y)
     def find_license(self,flag = False):
-        imgray = cv2.cvtColor(self.rorate, cv2.COLOR_BGR2GRAY)
-        im2, contours, hierarchy =cv2.findContours(imgray, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+        # imgray = cv2.cvtColor(self.rorate, cv2.COLOR_BGR2GRAY)
+        im2, contours, hierarchy =cv2.findContours(self.rorate, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
         contours = sorted(contours, key=cv2.contourArea, reverse=True)[:20]
         i = 0
         for c in contours:
@@ -235,12 +237,13 @@ class Localisation(Detection):
                 pointt1, pointt2 = self.max_min()
                 max_x = max((max_x,pointt2[0]))
                 if flag == True:
-                    cv2.rectangle(self.rorate, pointt1, pointt2, (255, 22, 0), 2)
-                    cv2.rectangle(self.rorate, point1, (max_x,point2[1]), (255, 22, 0), 2)
-                    Operation.open_picture(self,self.rorate,'lol')
+                    # cv2.rectangle(self.rorate, pointt1, pointt2, (255, 22, 0), 2)
+                    # cv2.rectangle(self.rorate, point1, (max_x,point2[1]), (255, 22, 0), 2)
+                     Operation.open_picture(self,self.rorate,'lol')
+                    # Operation.save_picture(self,self.local,self.path_rorate_local,self.img_name)
                 else:
                     self.roi_area(point1,(max_x,point2[1]))
-                    Operation.save_picture(self,self.local,self.path_rorate_local,self.img_name)
+                    print('Picture Localisation')
 
             if i == 0:
                 # res = ap
@@ -258,26 +261,14 @@ class Localisation(Detection):
         self.rorate()
         self.find_license()
     def Already_tresh(self):
-        self.rotate()
+        self.rotate(flag=False)
         self.find_license()
 
-
-
-
-    # Получаем две максимальные точки
-
-            #cv2.drawContours(im, [ap], -1, (0, 255, 0), 3)
-        #open_picture(im)
-            # compute the bounding box of the of the paper region and return it
-# Получаем две максимальные точки
-
-        #cv2.drawContours(im, [ap], -1, (0, 255, 0), 3)
-    #open_picture(im)
-        # compute the bounding box of the of the paper region and return it
 
 class Recognition(Localisation):
     height = 0
     width = 0
+
     def __init__(self,img,i):
         self.img_name = i
         self.reduce_img = img
@@ -286,6 +277,7 @@ class Recognition(Localisation):
         self.characters = []
         self.plate_chars = ""
         self.digits_chars = ''
+        self.result = ''
 
     def take_character(self,H, K, H_s, K_s):
     #  (min_x, max_y), (max_x, min_y)
@@ -344,7 +336,7 @@ class Recognition(Localisation):
 
 
     def clean_image_1(self):
-        gray_img = cv2.cvtColor(self.reduce_img, cv2.COLOR_BGR2GRAY)
+        # gray_img = cv2.cvtColor(self.reduce_img, cv2.COLOR_BGR2GRAY)
 
         # resized_img = cv2.resize(gray_img
         #                          , None
@@ -365,12 +357,12 @@ class Recognition(Localisation):
         # cv2.imwrite('licence_plate_mask.png', mask)
 
         kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-        self.reduce_img = cv2.erode(gray_img, kernel, iterations=1)
+        self.reduce_img = cv2.erode(self.reduce_img, kernel, iterations=1)
         # cv2.imwrite('licence_plate_mask2.png', mask)
 
         # return mask
 
-    def extract_characters(self):
+    def extract_characters(self,flag = False):
 
         # bw_image = cv2.bitwise_not(img)
         # imgray = cv2.cvtColor(self.loc_img, cv2.COLOR_BGR2GRAY)
@@ -408,6 +400,9 @@ class Recognition(Localisation):
                 # cv2.rectangle(self.reduce_img, point1, point2, (255, 45,60), 3 )
                 # Operation.open_picture(self,self.loc_img,'lol')
             # Operation.save_picture(self,self.reduce_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_1',self.img_name)
+            if flag == True:
+                cv2.rectangle(self.loc_img, point1, point2, (0, 0,0), 3 )
+                Operation.open_picture(self,self.loc_img,'lol')
 
         bounding_boxes.sort()
         ter = self.delete_crosses(bounding_boxes)
@@ -437,11 +432,12 @@ class Recognition(Localisation):
         model = cv2.ml.KNearest_create()
         model.train(samples, cv2.ml.ROW_SAMPLE, responses)
         return model
-    def Recorgnition_KNN(self):
+    def Recorgnition_KNN(self,Flag = False):
         self.clean_image_1()
-        r.extract_characters()
+        self.extract_characters(flag= False)
         charss = self.model_knn(r'chars_samples.data',r'chars_responses.data')
         digits = self.model_knn(r'digits_samples.data',r'digits_responses.data')
+
         for bbox, char_img in self.characters:
             # print(char_img.size)
             small_img = cv2.resize(char_img, (100,120))
@@ -449,61 +445,71 @@ class Recognition(Localisation):
             small_img = small_img.reshape((1, 12000))
             small_img = np.float32(small_img)
             retval, dig, neigh_resp, dists = digits.findNearest(small_img, k=1)
-            # print(str(chr(results)))
+            # print(str(chr(dig)))
             self.digits_chars += str(chr((dig[0][0])))
 
             retval, chars, neigh_resp, dists = charss.findNearest(small_img, k=1)
             self.plate_chars += str(chr((chars[0][0])))
         # return (self.plate_chars)
-        a = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:])
-        Operation.save_picture(self,self.reduce_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_2','{0}.png'.format(a))
-        return a
+        self.result = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:])
+        if Flag:
+            Operation.save_picture(self,self.reduce_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_2','{0}.png'.format(a))
+        return self.result
 
 
+def Prepare_Img(path):
+    im  = cv2.imread(r"{0}".format(path))
+    img_name =os.path.split(path)
+    cas = Detection(im,img_name)
+    cas.Creates_pictures()
+    l =  Localisation(cas.tresh,img_name)
+    l.Already_tresh()
+    r = Recognition(l.local,img_name)
+    a = r.Recorgnition_KNN()
+    print(a)
+
+def Open_Img_Seg(path):
+    im  = cv2.imread(r"{0}".format(path))
+    im  = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    img_name =os.path.split(path)
+    l =  Localisation(im,img_name)
+    l.Already_tresh()
+    r = Recognition(l.local,img_name)
+    a = r.Recorgnition_KNN()
+    print(a)
 
 
-        # bounding_boxes.sort()
-        # ter = s.delete_crosses(bounding_boxes)
-        # for point1, point2 in ter:
-        #     cv2.rectangle(char_mask , point1, point2, 255, 1)
-        # characters = []
-        # for point1, point2 in ter:
-        #     x, y, = point1
-        #     w, h = point2
-        #     char_image = dec.roi_area(img,point1, point2)
-        #     # dec.open_picture(char_image,'t')
-        #     characters.append(((point1, point2), char_image))
-        # return characters
-
-
-
-
-
-
+def Prepare_all_Img(path):
+    pass
+    # lst =os.listdir()
     
 
 
 
 
 if __name__ == '__main__':
-    path = r'D:\Github_project\VKR\CARS_ANOTHER'
-    a = Detection.path_tresh
-    b = Localisation.path_rorate_local
-    # os.listdir(b) ['213.png','412.png','407.png'] ['1.png','213.png','412.png','407.png']
-    lst =os.listdir(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_1')
-    # lst = ['1.png','213.png','412.png','407.png','109.png']
-    for i in lst:
-        print(r"{0}\{1}".format(b,i))
-        img = cv2.imread(r"{0}\{1}".format(b,i))
-        # s = Detection(img,i)
-        # s.tresh = s
-        l = Localisation(img,i)
-        l.img_name = i
-        # l = Localisation(img,i)
-        # l.Already_tresh()
-        r = Recognition(img,i)
-
-        a = r.Recorgnition_KNN()
-        print(a)
+    path = r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Video\THres1030.jpg'
+    Open_Img_Seg(path)
+    # Open_Img_Seg(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Tresholding_tr\THres0032.jpg')
+    # Prepare_Img(r'D:\Github_project\VKR\CARS_ANOTHER\1.png')
+    # path = r'D:\Github_project\VKR\CARS_ANOTHER'
+    # a = Detection.path_tresh
+    # b = Localisation.path_rorate_local
+    # # os.listdir(b) ['213.png','412.png','407.png'] ['1.png','213.png','412.png','407.png']
+    # lst =os.listdir(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_1')
+    # # lst = ['1.png','213.png','412.png','407.png','109.png']
+    # for i in lst:
+    #     print(r"{0}\{1}".format(b,i))
+    #     img = cv2.imread(r"{0}\{1}".format(b,i))
+    #     # s = Detection(img,i)
+    #     # s.tresh = s
+    #     l = Localisation(img,i)
+    #     l.img_name = i
+    #     # l = Localisation(img,i)
+    #     # l.Already_tresh()
+    #     r = Recognition(img,i)
+    #
+    #     a = r.Recorgnition_KNN()
+    #     print(a)
 
 

@@ -15,11 +15,11 @@ if __name__ == '__main__':
         # if time()-t >=1:
         a = C.Cascade(frame)
 
-        if a[0] != False and i > 1:
-            path = r"D:\Github_project\VKR\VIDEO\capture\%.4d.jpg" % i # Уникальное имя для каждого кадра
+        if a[0] != False and i >= 0:
+            path = r"D:\Github_project\OPENCV_Examples\VIDEO\capture\%.4d.jpg" % i # Уникальное имя для каждого кадра
             print(i)
             cv2.imwrite(path, a[1])
             i += 1
-            t = time()
+            # t = time()
     cap.release()
     cv2.destroyAllWindows()

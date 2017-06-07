@@ -5,7 +5,7 @@ import numpy as np
 
 from matplotlib import pyplot as plt
 import os
-import Copy_delete as cop
+
 url = 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_russian_plate_number.xml'
 path = './CARS_ANOTHER/0.png'
 OUT = 'OUPUT_ANOTHER/'
@@ -26,10 +26,10 @@ def threthholding(path):
     blur = cv2.GaussianBlur(img, (5, 5), 0)
     # th3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,111,3)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    img = cv2.blur(img, (5, 5))
+    img = cv2.blur(gray, (5, 5))
     # gray = cv2.GaussianBlur(gray, (3, 3), 0);
-    ret, otsu = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
-    open_picture(otsu)
+    ret, otsu = cv2.threshold(gray               ,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+    # open_picture(otsu)
     return otsu
 
 def Conver_all_picture(path,path_out):
@@ -123,7 +123,7 @@ if __name__ == '__main__':
             # save_picture(r'D:\Github_project\VKR\VIDEO\CASCADE',i)
             print(r'D:\Github_project\VKR\VIDEO\capture\{0}'.format(i))
             the = threthholding(r'D:\Github_project\VKR\VIDEO\capture\{0}'.format(i))
-            save_picture(r'D:\Github_project\VKR\VIDEO\THres',the,i)
+            save_picture(r'D:\Github_project\OPENCV_Examples\VIDEO\THres',the,i)
         # for i in os.listdir(OUT):
         #     a = threthholding(path=r"D:\Git_project\VKR\OUPUT_ANOTHER\{0}".format(i))
         #     move_file(path_out='./THRESHOLD/',path_out1=r'./BAD_THRESHOLD/',idmg=a,i=i)
