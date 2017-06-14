@@ -10,6 +10,7 @@ url = 'https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/
 path = './CARS_ANOTHER/0.png'
 OUT = 'OUPUT_ANOTHER/'
 path_res = "./CARS_ANOTHER/"
+import copy
 #FOR UNDETECTED_CARS # path=r'D:\Git_project\VKR\UNDETECTED_CARS\42.png'
 
 
@@ -28,7 +29,7 @@ def threthholding(path):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     img = cv2.blur(gray, (5, 5))
     # gray = cv2.GaussianBlur(gray, (3, 3), 0);
-    ret, otsu = cv2.threshold(gray               ,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+    ret, otsu = cv2.threshold(gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
     # open_picture(otsu)
     return otsu
 
@@ -84,21 +85,24 @@ def save_picture(OUT, img, i):
 def Cascade(img):
     plate_cascade = cv2.CascadeClassifier("haarcascade_russian_plate_number.xml")
     # img = cv2.imread(path)
+
     try:
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         # open_picture(gray)
         plaques = plate_cascade.detectMultiScale(gray, 1.3, 10)
-        for i, (x, y, w, h) in enumerate(plaques):
-            roi_color = img[y:y + h, x:x + w]
-            r = 300.0 / roi_color.shape[1]
-            dim = (300, int(roi_color.shape[0] * r))
-            resized = cv2.resize(roi_color, dim, interpolation=cv2.INTER_AREA)
-        print("Ok")
-        return True,resized
+        if plaques != ():
+            for i, (x, y, w, h) in enumerate(plaques):
+                roi_color = img[y:y + h, x:x + w]
+                cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+
+                r = 300.0 / roi_color.shape[1]
+                dim = (300, int(roi_color.shape[0] * r))
+                resized = cv2.resize(roi_color, dim, interpolation=cv2.INTER_AREA)
+            return True,resized
+        else:
+            return False,'lol'
     except:
-        flag = False
-        print("Error")
-        return flag,'lol'
+        print('Error')
         #os.remove(path)
 
 

@@ -1,10 +1,19 @@
-from urllib.request import urlopen
+
+
 import cv2
 import math
 import numpy as np
-
+import json
+import sys
+import datetime
+import time
+import requests
 from matplotlib import pyplot as plt
 import os
+import copy
+import configparser
+
+
 class Operation:
     def __init__(self,img,i):
         self.image = img
@@ -36,18 +45,22 @@ class Detection(Operation):
     path_tresh ="{0}\\{1}".format(current_path,'Tresholding')
     path_tresh_otsu ="{0}\\{1}".format(current_path,'Tresholding_127')
     path_tresh_tr = "{0}\\{1}".format(current_path,'Tresholding_tr')
-    path_native = "{0}\\{1}".format(current_path,'Haar')
+    path_native = "{0}\\{1}".format(current_path,'CARS_OUTPUT')
     path_thres_all = ''
     # path_rorate = "{0}\\{1}".format(current_path,'Rorated')
     # path_loc ="{0}\\{1}".format(current_path,'Local')
     def __init__(self,img,name):
         self.original_image = img
+        self.org = img
         self.tresh = None
         self.native = None
+        self.cas = None
         self.rorate = None
         self.loc = None
         self.img_name = name
         self.roi_segment = []
+        if  os.path.exists(self.path_native) == False:
+            os.mkdir(self.path_native)
         # if  os.path.exists(self.path_tresh) == False or os.path.exists(self.path_tresh_otsu) == False:
         #     os.mkdir(self.path_tresh)
         #     os.mkdir(self.path_native)
@@ -62,12 +75,12 @@ class Detection(Operation):
         f.close()
 
     def thretholding(self,flag=False):
-        if self.native is  None:
+        if self.cas is  None:
             print("You didnt create cascade image!")
         else:
             #img = cv2.GaussianBlur(img, (5, 5), 0)
             # th3 = cv2.adaptiveThreshold(img,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,111,3)
-            gray = cv2.cvtColor(self.native, cv2.COLOR_BGR2GRAY)
+            gray = cv2.cvtColor(self.cas, cv2.COLOR_BGR2GRAY)
 
             #img = cv2.blur(img, (5, 5))
             blur = cv2.GaussianBlur(gray, (3, 3), 0)
@@ -124,23 +137,31 @@ class Detection(Operation):
         if os.path.exists("{0}//{1}".format(self.current_path,'haarcascade_russian_plate_number.xml')):
             plate_cascade = cv2.CascadeClassifier("haarcascade_russian_plate_number.xml")
             # open_picture(gray)
+
+            self.native = copy.copy(self.original_image)
             try:
-                self.native = self.original_image
                 gray = cv2.cvtColor(self.native, cv2.COLOR_BGR2GRAY)
                 plaques = plate_cascade.detectMultiScale(gray, 1.3, 5)
-                for i, (x, y, w, h) in enumerate(plaques):
-                    roi_color = self.native[y:y + h, x:x + w]
-                    r = 300.0 / roi_color.shape[1]
-                    dim = (300, int(roi_color.shape[0] * r))
-                    resized = cv2.resize(roi_color, dim, interpolation=cv2.INTER_AREA)
-                    self.native = resized
+                if plaques != ():
+                    for i, (x, y, w, h) in enumerate(plaques):
+                        cv2.rectangle(self.original_image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+                        roi_color = self.native[y:y + h, x:x + w]
+
+                        r = 300.0 / roi_color.shape[1]
+                        dim = (300, int(roi_color.shape[0] * r))
+                        resized = cv2.resize(roi_color, dim, interpolation=cv2.INTER_AREA)
+                        self.cas = resized
+
+                        print("Your picture is cascade")
+                else:
+                    print("Sorry,Error")
 
             except:
-                flag = False
-                print("Sorry,Error")
+                print('Error')
         else:
             self.download()
             self.Cascade()
+
     def Creates_pictures(self,flag = False):
             self.Cascade()
             a = Operation(self.native,self.img_name)
@@ -272,6 +293,7 @@ class Recognition(Localisation):
     def __init__(self,img,i):
         self.img_name = i
         self.reduce_img = img
+        self.color = None
         self.loc_img = img
         self.img_red = img
         self.characters = []
@@ -400,9 +422,7 @@ class Recognition(Localisation):
                 # cv2.rectangle(self.reduce_img, point1, point2, (255, 45,60), 3 )
                 # Operation.open_picture(self,self.loc_img,'lol')
             # Operation.save_picture(self,self.reduce_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_1',self.img_name)
-            if flag == True:
-                cv2.rectangle(self.loc_img, point1, point2, (0, 0,0), 3 )
-                Operation.open_picture(self,self.loc_img,'lol')
+
 
         bounding_boxes.sort()
         ter = self.delete_crosses(bounding_boxes)
@@ -419,6 +439,12 @@ class Recognition(Localisation):
 
             # dec.open_picture(char_image,'t')
             self.characters.append(((point1, point2), char_image))
+        if flag == True:
+            self.color = cv2.cvtColor(self.reduce_img, cv2.COLOR_GRAY2BGR)
+            for point1, point2 in ter:
+                cv2.rectangle(self.color, point1, point2, (255, 0,0), 2)
+            # Operation.open_picture(self,self.reduce_img,'lol')
+            # Operation.save_picture(self,self.loc_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\CARS_OUTPUT', self.img_name[1])
         # Operation.save_picture(self,self.reduce_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_2',self.img_name)
         # return characters
     def model_knn(self,samples,responses):
@@ -434,7 +460,7 @@ class Recognition(Localisation):
         return model
     def Recorgnition_KNN(self,Flag = False):
         self.clean_image_1()
-        self.extract_characters(flag= False)
+        self.extract_characters(flag= True)
         charss = self.model_knn(r'chars_samples.data',r'chars_responses.data')
         digits = self.model_knn(r'digits_samples.data',r'digits_responses.data')
 
@@ -451,10 +477,55 @@ class Recognition(Localisation):
             retval, chars, neigh_resp, dists = charss.findNearest(small_img, k=1)
             self.plate_chars += str(chr((chars[0][0])))
         # return (self.plate_chars)
-        self.result = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:])
-        if Flag:
-            Operation.save_picture(self,self.reduce_img,r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Segmentation_2','{0}.png'.format(a))
-        return self.result
+        try:
+            self.result = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:])
+            if len(self.digits_chars[6:]) >= 4  or int(self.digits_chars[6:]) >= 190:
+                self.result = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:len(self.digits_chars)-1])
+            if int(self.digits_chars[6:])== 750:
+                self.result = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:])
+
+            if Flag == True:
+                # print(self.img_name)
+                Operation.save_picture(self,self.color,r'.\CARS_OUTPUT',self.img_name[1])
+                return self.result
+            else:
+                self.result = (self.plate_chars[0]+self.digits_chars[1:4] + self.plate_chars[4:6]+self.digits_chars[6:])
+                return self.result
+        except:
+                return None
+class SAP():
+    def __init__(self,token,device,account,message):
+        self.TOKEN = token
+
+        self.MESSAGE_DEVICE= device
+        self.NAME_ACCOUNT = account
+        self.MESSAGE = message
+    def send_data_urllib(self,img_name,number):
+        headers = {
+                    "Authorization": "Bearer {token}".format(token=self.TOKEN),
+                    "Content-Type": "application/json;charset=UTF-8",
+                }
+
+        url = "https://iotmmsp{account}.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/{device}". \
+            format(account=self.NAME_ACCOUNT,device = self.MESSAGE_DEVICE)
+
+        data = {
+            "mode": "async",
+            "messageType": self.MESSAGE,
+            "messages": [
+                {
+                    "timestamp": int(time.mktime(datetime.datetime.now().timetuple())),
+                    "NUMBER": number,
+                    "NAME_PICTURE": img_name,
+                }
+            ]
+        }
+
+        r = requests.post(
+        url=url,
+        json=data,
+        headers=headers,)
+        return r.status_code
 
 
 def Prepare_Img(path):
@@ -465,8 +536,10 @@ def Prepare_Img(path):
     l =  Localisation(cas.tresh,img_name)
     l.Already_tresh()
     r = Recognition(l.local,img_name)
-    a = r.Recorgnition_KNN()
+    a = r.Recorgnition_KNN(Flag= True)
     print(a)
+    return a
+
 
 def Open_Img_Seg(path):
     im  = cv2.imread(r"{0}".format(path))
@@ -475,23 +548,118 @@ def Open_Img_Seg(path):
     l =  Localisation(im,img_name)
     l.Already_tresh()
     r = Recognition(l.local,img_name)
-    a = r.Recorgnition_KNN()
+    a = r.Recorgnition_KNN(Flag=True)
     print(a)
-
+    return a
+def Get_Img(path):
+    im  = cv2.imread(r"{0}".format(path))
+    # im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    # cv2.cvtColor(im, cv2.COLOR_BGR2RGB, im)
+    # res = cv2.resize(im,(100, 100), interpolation = cv2.INTER_CUBIC)
+    o = Operation(im,'lol')
+    o.open_picture(im,'lol')
+    return im
+    # o.open_picture(o.image,o.count)
+    # o.save_picture_p(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION')
 
 def Prepare_all_Img(path):
-    pass
-    # lst =os.listdir()
+    lst =os.listdir(path)
+    for i in lst:
+        im  = cv2.imread(r"{0}\{1}".format(path,i))
+        print(r"{0}\{1}".format(path,i))
+        o = Operation(im,i)
+        # o.open_picture(im,i)
+        o.save_picture_p(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\CARSSSS_BLEYTTTTT')
     
+def Video_file(filename):
+    cap = cv2.VideoCapture(filename)
+    i = 0
 
+    while(cap.isOpened()):
+
+        re,frame = cap.read()
+
+        cv2.waitKey(10)
+        # if time()-t >=1:
+        cas = Detection(frame,str(i))
+        cas.Creates_pictures()
+        if cas.tresh is not None:
+
+            l =  Localisation(cas.tresh,str(i))
+            l.Already_tresh()
+            r = Recognition(l.local,str(i))
+            a = r.Recorgnition_KNN(Flag= False)
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(frame,a,(23,50), font, 1,(205,203,255),4,cv2.LINE_AA)
+            if a is not None and (len(a) == 9 or len(a) == 8):
+                i+=1
+                cv2.imwrite(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\CApture\{0}.png'.format(i),frame)
+                print(a)
+        key = cv2.waitKey(5) & 0xFF
+        if key < 200:
+            break
+        cv2.imshow("PRESS any button FOR EXIT", frame)
+            # t = time()
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+def Video():
+    cap = cv2.VideoCapture(0)
+    i = 0
+    while(cap.isOpened()):
+
+        re,frame = cap.read()
+        cas = Detection(frame,str(i))
+        cas.Creates_pictures()
+        if cas.tresh is not None:
+            try:
+                l =  Localisation(cas.tresh,str(i))
+                l.Already_tresh()
+                r = Recognition(l.local,str(i))
+                a = r.Recorgnition_KNN(Flag= False)
+
+                font = cv2.FONT_HERSHEY_SIMPLEX
+                cv2.putText(frame,a,(23,50), font, 1,(205,203,255),4,cv2.LINE_AA)
+            except:
+                print('lol')
+
+        # cv2.waitKey(60)
+        # if time()-t >=1:
+
+            i += 1
+        else:
+            print('=(')
+        key = cv2.waitKey(5) & 0xFF
+        if key < 200:
+            break
+
+        cv2.imshow("PRESS any button FOR EXIT", frame)
+            # t = time()
+    cap.release()
+    cv2.destroyAllWindows()
 
 
 
 if __name__ == '__main__':
-    path = r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Video\THres1030.jpg'
-    Open_Img_Seg(path)
+    pass
+    # Video_file(r'D:\Github_project\OPENCV_Examples\VIDEO\videoplayback.mp4')
+    # res = None
+    # try:
+    #     Video(res)
+    # except:
+    #     print('Bad picture')
+        #r'D:\Github_project\OPENCV_Examples\VIDEO\Capture.wmv'
+    # a = Prepare_Img(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\CARSSSS_BLEYTTTTT\1.png')
+    # S = SAP('db97cf295d3148e83ed969ac8e4a2fbc','3a663739-9b68-492d-aa9e-67239969c0f9','1942531213trial','1a45b414bc00de3ca385')
+    # t = S.send_data_urllib('1',a)
+    # print(t)
+    # path = r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Video\THres1030.jpg'
+    # Get_Img(r'D:\Github_project\VKR\CARS_ANOTHER\1.png')
+    # Prepare_all_Img(r'D:\Github_project\CARS_ANOTHER')
+    # Open_Img_Seg(path)
     # Open_Img_Seg(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\Tresholding_tr\THres0032.jpg')
-    # Prepare_Img(r'D:\Github_project\VKR\CARS_ANOTHER\1.png')
+    # Prepare_Img(r'D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION\CARSSSS_BLEYTTTTT\1.png')
     # path = r'D:\Github_project\VKR\CARS_ANOTHER'
     # a = Detection.path_tresh
     # b = Localisation.path_rorate_local

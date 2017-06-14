@@ -20,79 +20,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Simple_function.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Simple_function.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Simple_function.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="490" column="85" selection-start-line="490" selection-start-column="85" selection-end-line="490" selection-end-column="85" />
+            <state relative-caret-position="20">
+              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
-                <element signature="e#1974#2108#0" expanded="false" />
-                <element signature="e#2940#4484#0" expanded="false" />
-                <element signature="e#4646#5412#0" expanded="false" />
-                <element signature="e#5439#5481#0" expanded="false" />
-                <element signature="e#6310#6627#0" expanded="false" />
-                <element signature="e#10527#10772#0" expanded="false" />
-                <element signature="e#10831#11006#0" expanded="false" />
-                <element signature="e#11055#11305#0" expanded="false" />
-                <element signature="e#11352#11460#0" expanded="false" />
-                <element signature="e#11505#12299#0" expanded="false" />
-                <element signature="e#16233#16624#0" expanded="false" />
+                <element signature="e#2#12#0" expanded="true" />
+                <element signature="e#2189#2323#0" expanded="false" />
+                <element signature="e#3149#4693#0" expanded="false" />
+                <element signature="e#5994#6584#0" expanded="false" />
+                <element signature="e#6621#10611#0" expanded="false" />
+                <element signature="e#11008#11253#0" expanded="false" />
+                <element signature="e#11312#11487#0" expanded="false" />
+                <element signature="e#11536#11786#0" expanded="false" />
+                <element signature="e#11833#11941#0" expanded="false" />
+                <element signature="e#11986#12780#0" expanded="false" />
+                <element signature="e#12820#12882#0" expanded="false" />
+                <element signature="e#16971#17362#0" expanded="false" />
+                <element signature="e#19227#20300#0" expanded="false" />
+                <element signature="e#20659#20936#0" expanded="false" />
+                <element signature="e#20960#21355#0" expanded="false" />
+                <element signature="e#21388#21683#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="THres1032.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Video/THres1032.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="THres1030.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Video/THres1030.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="THres1029.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Video/THres1029.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="THres0786.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Video/THres0786.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="THres0368.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Video/THres0368.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="THres0789.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Video/THres0789.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GUI.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUI.py">
+      <file leaf-file-name="Qfile_uic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Qfile_uic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="20">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
               <folding>
-                <element signature="e#1#11#0" expanded="true" />
+                <marker date="1497349762511" expanded="true" signature="1807:1980" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,14 +82,23 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/GUI.py" />
+        <option value="$PROJECT_DIR$/Model1.py" />
+        <option value="$PROJECT_DIR$/../../VKR/Download_picture.py" />
+        <option value="$PROJECT_DIR$/QtFileDialog.py" />
+        <option value="$PROJECT_DIR$/Switch_layouts.py" />
+        <option value="$PROJECT_DIR$/Video_capture.py" />
+        <option value="$PROJECT_DIR$/example.ini" />
         <option value="$PROJECT_DIR$/Simple_function.py" />
+        <option value="$PROJECT_DIR$/Qfile_uic.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1924" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -144,6 +125,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -172,17 +154,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Video" />
+              <option name="myItemId" value="CApture" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../VIDEO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -195,7 +176,7 @@
       <recent name="D:\Github_project\OPENCV_Examples\CAR_NUMBER_RECOGNITION" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Simple_function">
+  <component name="RunManager" selected="Python.Qfile_uic">
     <configuration default="false" name="Simple_function" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -213,7 +194,7 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="QtFileDialog" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -225,7 +206,58 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CAR_NUMBER_RECOGNITION" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/QtFileDialog.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Qfile_uic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CAR_NUMBER_RECOGNITION" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Qfile_uic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Switch_layouts" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CAR_NUMBER_RECOGNITION" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Switch_layouts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CAR_NUMBER_RECOGNITION" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/setup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -377,14 +409,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Simple_function" />
-      <item index="1" class="java.lang.String" itemvalue="Python.GUI" />
+      <item index="1" class="java.lang.String" itemvalue="Python.QtFileDialog" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Qfile_uic" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Switch_layouts" />
+      <item index="4" class="java.lang.String" itemvalue="Python.setup" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.Simple_function" />
-        <item index="1" class="java.lang.String" itemvalue="Python.GUI" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.Qfile_uic" />
+        <item index="1" class="java.lang.String" itemvalue="Python.setup" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Simple_function" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Switch_layouts" />
+        <item index="4" class="java.lang.String" itemvalue="Python.QtFileDialog" />
       </list>
     </recent_temporary>
   </component>
@@ -392,14 +430,14 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1924" height="1047" extended-state="1" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3854719" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38278776" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33223686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39933994" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253796" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23452769" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39649507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -410,6 +448,22 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3253796" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23995657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38303477" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39649507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -424,180 +478,230 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Simple_function.py">
+    <entry file="file://$PROJECT_DIR$/Video/THres0154.jpg" />
+    <entry file="file://$PROJECT_DIR$/Video/THres0786.jpg" />
+    <entry file="file://$PROJECT_DIR$/Video/THres0368.jpg" />
+    <entry file="file://$PROJECT_DIR$/Video/THres1029.jpg" />
+    <entry file="file://$PROJECT_DIR$/Video/THres1032.jpg" />
+    <entry file="file://$PROJECT_DIR$/Video/THres1030.jpg" />
+    <entry file="file://$PROJECT_DIR$/Model1.py" />
+    <entry file="file://$PROJECT_DIR$/Video/THres0789.jpg" />
+    <entry file="file://$PROJECT_DIR$/GUI.py" />
+    <entry file="file://$USER_HOME$/Miniconda3/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#1974#2108#0" expanded="false" />
-            <element signature="e#2940#4484#0" expanded="false" />
-            <element signature="e#4646#5412#0" expanded="false" />
-            <element signature="e#5439#5481#0" expanded="false" />
-            <element signature="e#6310#6627#0" expanded="false" />
-            <element signature="e#10527#10772#0" expanded="false" />
-            <element signature="e#10831#11006#0" expanded="false" />
-            <element signature="e#11055#11305#0" expanded="false" />
-            <element signature="e#11352#11460#0" expanded="false" />
-            <element signature="e#11505#12299#0" expanded="false" />
-            <element signature="e#16233#16624#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="61">
+          <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Simple_function.py">
+    <entry file="file://$PROJECT_DIR$/../../VKR/Download_picture.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#1974#2108#0" expanded="false" />
-            <element signature="e#2940#4484#0" expanded="false" />
-            <element signature="e#4646#5412#0" expanded="false" />
-            <element signature="e#5439#5481#0" expanded="false" />
-            <element signature="e#6310#6627#0" expanded="false" />
-            <element signature="e#10527#10772#0" expanded="false" />
-            <element signature="e#10831#11006#0" expanded="false" />
-            <element signature="e#11055#11305#0" expanded="false" />
-            <element signature="e#11352#11460#0" expanded="false" />
-            <element signature="e#11505#12299#0" expanded="false" />
-            <element signature="e#16233#16624#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="606">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Simple_function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#1974#2108#0" expanded="false" />
-            <element signature="e#2940#4484#0" expanded="false" />
-            <element signature="e#4646#5412#0" expanded="false" />
-            <element signature="e#5439#5481#0" expanded="false" />
-            <element signature="e#6310#6627#0" expanded="false" />
-            <element signature="e#10527#10772#0" expanded="false" />
-            <element signature="e#10831#11006#0" expanded="false" />
-            <element signature="e#11055#11305#0" expanded="false" />
-            <element signature="e#11352#11460#0" expanded="false" />
-            <element signature="e#11505#12299#0" expanded="false" />
-            <element signature="e#16233#16624#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Simple_function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#1974#2108#0" expanded="false" />
-            <element signature="e#2940#4484#0" expanded="false" />
-            <element signature="e#4646#5412#0" expanded="false" />
-            <element signature="e#5439#5481#0" expanded="false" />
-            <element signature="e#6310#6627#0" expanded="false" />
-            <element signature="e#10527#10772#0" expanded="false" />
-            <element signature="e#10831#11006#0" expanded="false" />
-            <element signature="e#11055#11305#0" expanded="false" />
-            <element signature="e#11352#11460#0" expanded="false" />
-            <element signature="e#11505#12299#0" expanded="false" />
-            <element signature="e#16233#16624#0" expanded="false" />
-          </folding>
-        </state>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/28.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Miniconda3/Lib/genericpath.py">
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/32.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/58.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/91.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/96.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/95.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/43.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/27.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/13.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/12.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Switch_layouts.py" />
+    <entry file="file://$PROJECT_DIR$/QtFileDialog.py" />
+    <entry file="file://$PROJECT_DIR$/Video_capture.py" />
+    <entry file="file://$PROJECT_DIR$/Cascade_Haar.py" />
+    <entry file="file://$PROJECT_DIR$/Segmentation_2/A020TK102.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Segmentation_2/A154MK777.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Segmentation_2/A419KA51.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Segmentation_1/2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/135.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CARS_OUTPUT/142.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.png" />
+    <entry file="file://$PROJECT_DIR$/CApture/6.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/9.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/8.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CApture/7.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example.ini" />
+    <entry file="file://D:/Github_projectOPENCV_ExamplesCAR_NUMBER_RECOGNITIONMode1.py" />
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="80">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
+    <entry file="file://$PROJECT_DIR$/Simple_function.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="20">
+          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
-            <element signature="e#1#11#0" expanded="true" />
+            <element signature="e#2#12#0" expanded="true" />
+            <element signature="e#2189#2323#0" expanded="false" />
+            <element signature="e#3149#4693#0" expanded="false" />
+            <element signature="e#5994#6584#0" expanded="false" />
+            <element signature="e#6621#10611#0" expanded="false" />
+            <element signature="e#11008#11253#0" expanded="false" />
+            <element signature="e#11312#11487#0" expanded="false" />
+            <element signature="e#11536#11786#0" expanded="false" />
+            <element signature="e#11833#11941#0" expanded="false" />
+            <element signature="e#11986#12780#0" expanded="false" />
+            <element signature="e#12820#12882#0" expanded="false" />
+            <element signature="e#16971#17362#0" expanded="false" />
+            <element signature="e#19227#20300#0" expanded="false" />
+            <element signature="e#20659#20936#0" expanded="false" />
+            <element signature="e#20960#21355#0" expanded="false" />
+            <element signature="e#21388#21683#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0986.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0364.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0964.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0154.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0786.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0368.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres0789.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres1029.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres1032.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Video/THres1030.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Simple_function.py">
+    <entry file="file://$PROJECT_DIR$/Qfile_uic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="490" column="85" selection-start-line="490" selection-start-column="85" selection-end-line="490" selection-end-column="85" />
+        <state relative-caret-position="20">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#1974#2108#0" expanded="false" />
-            <element signature="e#2940#4484#0" expanded="false" />
-            <element signature="e#4646#5412#0" expanded="false" />
-            <element signature="e#5439#5481#0" expanded="false" />
-            <element signature="e#6310#6627#0" expanded="false" />
-            <element signature="e#10527#10772#0" expanded="false" />
-            <element signature="e#10831#11006#0" expanded="false" />
-            <element signature="e#11055#11305#0" expanded="false" />
-            <element signature="e#11352#11460#0" expanded="false" />
-            <element signature="e#11505#12299#0" expanded="false" />
-            <element signature="e#16233#16624#0" expanded="false" />
+            <marker date="1497349762511" expanded="true" signature="1807:1980" ph="..." />
           </folding>
         </state>
       </provider>
